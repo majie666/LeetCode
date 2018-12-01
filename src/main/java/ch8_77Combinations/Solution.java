@@ -1,4 +1,4 @@
-package ch8_77Combinations_;
+package ch8_77Combinations;
 
 import java.util.List;
 import java.util.ArrayList;
