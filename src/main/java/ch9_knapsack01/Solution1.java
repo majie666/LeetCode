@@ -1,14 +1,15 @@
 package ch9_knapsack01;
+import java.util.*;
 
-/// 背包问题
+/// 背包问题 hahaha
 /// 记忆化搜索
 /// 时间复杂度: O(n * C) 其中n为物品个数; C为背包容积
 /// 空间复杂度: O(n * C)
 public class Solution1 {
 
-    private int[][] memo;
+    private static int[][] memo;
 
-    public int knapsack01(int[] w, int[] v, int C){
+    public static int knapsack01(int[] w, int[] v, int C){
 
         if(w == null || v == null || w.length != v.length)
             throw new IllegalArgumentException("Invalid w or v");
@@ -19,13 +20,13 @@ public class Solution1 {
         int n = w.length;
         if(n == 0 || C == 0)
             return 0;
-
+        //C+1才能保证最大剩余容量为C，memo[i][j]：0~i的物品放入容量为j时的最大价值
         memo = new int[n][C + 1];
         return bestValue(w, v, n - 1, C);
     }
 
     // 用 [0...index]的物品,填充容积为c的背包的最大价值
-    private int bestValue(int[] w, int[] v, int index, int c){
+    private static int bestValue(int[] w, int[] v, int index, int c){
 
         if(c <= 0 || index < 0)
             return 0;
@@ -41,7 +42,9 @@ public class Solution1 {
     }
 
     public static void main(String[] args) {
-
+        int[] w = {1,3,5};
+        int[] v = {2,4,6};
+        System.out.println(knapsack01(w,v,8));
     }
 
 }
