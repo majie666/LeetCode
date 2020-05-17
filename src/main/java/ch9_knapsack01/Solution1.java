@@ -42,7 +42,7 @@ public class Solution1 {
     }
 
     public static void main(String[] args) {
-        int[] w = {1,3,5};
+        int[] w = {1,3,4};
         int[] v = {2,4,6};
         System.out.println(knapsack01(w,v,8));
     }
